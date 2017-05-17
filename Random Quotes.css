@@ -11,10 +11,10 @@ body {
 }
 
 p {
-  padding-bottom: 45px;
+  padding-bottom: 85px;
   font-size: 2em;
   font-weight: bold;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One', cursive,Palatino, Verdana, 'sans serif';
   /* width: 1178px; */
   text-align: center;
   letter-spacing: 1.5px;
@@ -38,14 +38,15 @@ em {
 
 .button {
   position: absolute;
-  bottom: 5%;
+  bottom: 8%;
   left: 35%;
   width: 120px;
   height: 40px;
   border: solid 3px black;
   background-color: rgb(152, 147, 218);
-  font-size: 1em;
+  font-size: 1.2em;
+  letter-spacing: 1.5px;
   font-weight: bold;
   text-align: center;
-  font-family: Palatino, Verdana, 'sans serif';
+  font-family: 'Poiret One', cursive, Palatino, Verdana, 'sans serif';
   box-shadow: 4px 4px 8px 3px rgba(0, 0, 0, 0.40);
