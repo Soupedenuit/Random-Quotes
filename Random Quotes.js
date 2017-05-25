@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded',function() {
   }
 
   $( document ).ready(function() {
-    $( "#getQuotes" ).on( "click", function() {  delayDisplay();
+    $( "#getQuotes" ).on( "touchstart", function() {  delayDisplay();
     });
   });
 
