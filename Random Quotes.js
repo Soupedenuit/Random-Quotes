@@ -1,27 +1,66 @@
 /* JSON APIs & AJAX */
 
-/* ISOLATE QUOTE VALUE ONLY CODE --------------- */ 
+/* ISOLATE QUOTE VALUE ONLY CODE --------------- */
 document.addEventListener('DOMContentLoaded',function() {
 
   /*document.getElementById('getQuotes').onclick = quoteDisplay(); */
 
-  window.onload = quoteDisplay();
+  window.onload = rotateDisplay();
 
-  var nIntervId1;
-  function delayDisplay() {
+  function rotateDisplay() {
     quoteDisplay();
-    nIntervId1 = window.setInterval(function() { quoteDisplay()
-    }, 12000);
+    nIntervId1 = window.setInterval(function() {
+      newDisplay() // nIntervId1 is global var on purpose
+    }, 8000);
   }
 
+  function newDisplay() {
+    $( document ).ready(function() {
+      $("#quotes").css({'opacity':1}).animate({'opacity':0}, 1200);
+    });
+    window.setTimeout(function() {
+      preQuoteDisplay()
+    }, 1200);
+  }
+
+  function preQuoteDisplay() {
+    $( document ).ready(function() {
+      $("#quotes").html("").css({'opacity':0});
+    });
+    quoteDisplay();
+  }
+
+// new quote button (displays a new quote and
+// pauses the rotation of random quotes):
+
+  document.getElementById("newQuote").addEventListener("click", function(event) {
+    clearInterval(nIntervId1);
+    newDisplay();
+    });
+
+    document.getElementById("tweetQuote").addEventListener("click", function(event) {
+      var sendTweet = '"' + tweetQuote + '"\n - ' +  tweetAuthor;
+      if ( sendTweet.length <= 130 ) {  window.open("https://twitter.com/intent/tweet?hashtags=quotes&text=" + encodeURIComponent(sendTweet));
+      }
+      else alert("This quote is too long to tweet! Tweets must be 140 characters maximum, including hashtags (i.e. #quotes).");
+});
+
+
+/*
   $( document ).ready(function() {
-    $( "#getQuotes" ).on( "touchstart", function() {  delayDisplay();
+    $( "#newQuote" ).on( "click", function() {
+      $("#quotes").fadeOut(800, function() {    preQuoteDisplay();
+      clearInterval(nIntervId1);
+      });
     });
   });
+*/
+
+// random quotes button
+// (resumes the rotation of random quotes):
 
   $( document ).ready(function() {
-    $( "#newQuote" ).on( "click", function() {   clearInterval(nIntervId1);
-      quoteDisplay();
+    $( "#getQuotes" ).on( "click", function() {  rotateDisplay();
     });
   });
 
@@ -31,7 +70,8 @@ document.addEventListener('DOMContentLoaded',function() {
     httpRequest.send();
     httpRequest.onreadystatechange = function() {
       json = JSON.parse(httpRequest.responseText);
-      var html = "";
+      var htmlQuote = "";
+      var htmlAuthor = "";
       var randomizer = Math.random() * 44;
       var randomId = Math.ceil(randomizer);
       json = json.filter(function(val) {
@@ -53,28 +93,22 @@ document.addEventListener('DOMContentLoaded',function() {
           return d[part].join("");
         } //closes breakUpQuote() function
 
-      html += '<div class="api_quotes"><em>" </em>';
+      htmlQuote += '<div class="api_quotes"><em>" </em>';
       var quote = json[0].quote;
       var quoteArr = quote.split(" ");
       var quoteLen = quoteArr.length / 7;
       for ( var k = 0; k < quoteLen - 1; k++ ) {
-        html += breakUpQuote(quote, 7, k) + "</br>";
+        htmlQuote += breakUpQuote(quote, 7, k) + "</br>";
       }
       var part2a = quoteArr.length / 7;
       var part2b = Math.ceil(part2a);
       var part2c = part2b - 1;
-      html += breakUpQuote(quote, 7, part2c);
-      html += '<em>"</em></div>';
-
-      $("#quotes").animate({
-        opacity: 0
-      }, 800, function() {
-        $(this).animate({
-          opacity: 1
-        }, 800);
-          $("#quotes").html(html);
-        });
-
+      htmlQuote += breakUpQuote(quote, 7, part2c);
+      htmlQuote += '<em>"</em></br></div>';
+      var author = json[0].author;
+      htmlQuote += '</br>- ' + author + '</div>'
+      tweetQuote = quote;
+      tweetAuthor = author;
       /* Modify text size based on length of quote */
       function smallFont() {
         document.getElementById("quotes").style.cssText = "font-size: 1.7em;";
@@ -84,17 +118,38 @@ document.addEventListener('DOMContentLoaded',function() {
         document.getElementById("quotes").style.cssText = "font-size: 2.1em;";
       }
 
+      /* font conditions with timeouts
       if ( quoteLen > 4) {
         window.setTimeout(function() {smallFont()}, 1600);
       }
 
-      else window.setTimeout(function() {bigFont()}, 1600);
+      else window.setTimeout(function() {bigFont()}, 1600); */
 
+      if ( quoteLen > 5) {
+        smallFont();
+      }
 
-      /*document.getElementById('quotes').innerHTML =  html;*/
+      else bigFont();
 
+      /* Fade in & fade out quote */
 
-    }; //closes onreadystatechange function
+      /*$( document ).ready(function() {     $("#quotes").css({
+        opacity: 0
+      }, 800, function() {
+        $(this).animate({
+          opacity: 1
+        }, 800);
+
+        });
+      }); */
+
+      $( document ).ready(function() {
+        $("#quotes").html(htmlQuote).css({'opacity':0}).animate({'opacity':1}, 1200);
+      });
+
+      /*document.getElementById('quotes').innerHTML =  htmlQuote;*/
+
+  }; //closes onreadystatechange function
   }; //closes quoteDisplay() function
 // }); // closes jQuery effects function
 }); //closes addEventListener function

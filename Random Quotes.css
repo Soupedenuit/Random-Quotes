@@ -6,12 +6,23 @@ body {
   display: flex;
   justify-content: center; /*centers items on the line (the x-axis by default)*/
   align-items: center;
-  background-color: rgb(153,136,131) /*#ff7833;  /*rgb(185, 185, 210);*/
+  background-color: rgb(87,60,153) /*#ff7833;  /*rgb(185, 185, 210);*/
   /*background-image: url(quote_bubble_1.svg);*/
 }
 
-p {
+#quotes {
   padding-bottom: 85px;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Poiret One', Palatino, Verdana, 'sans serif';
+  /* width: 1178px; */
+  text-align: center;
+  letter-spacing: 1.8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.20);
+}
+
+#author {
+  padding-top: -75px;
   font-size: 2em;
   font-weight: bold;
   font-family: 'Poiret One', Palatino, Verdana, 'sans serif';
@@ -38,10 +49,10 @@ em {
 
 .button1 {
   position: absolute;
-  bottom: 15%;
-  left: 35%;
+  bottom: 18%;
+  left: 30%;
   width: 180px;
-  height: 40px;
+  height: 50px;
   border: solid 3px black;
   background-color: rgb(255,117,165); /*rgb(152, 147, 218);*/
   font-size: 1.2em;
@@ -55,10 +66,10 @@ em {
 
 .button2 {
   position: absolute;
-  bottom: 8%;
-  left: 35%;
+  bottom: 11%;
+  left: 30%;
   width: 180px;
-  height: 40px;
+  height: 50px;
   border: solid 3px black;
   background-color: rgb(255,117,165); /*rgb(152, 147, 218);*/
   font-size: 1.2em;
@@ -68,10 +79,24 @@ em {
   font-family: 'Poiret One', Palatino, Verdana, 'sans serif';
   box-shadow: 4px 4px 8px 3px rgba(0, 0, 0, 0.40);
   border-radius: 5%;
-  cursor: pointer;
 }
 
-input:hover {
+.button3 {
+  position: absolute;
+  bottom: 4%;
+  left: 30%;
+  height: 50px;
+  border: solid 3px black;
+  font-size: 1.2em;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Poiret One', Palatino, Verdana, 'sans serif';
+  box-shadow: 4px 4px 8px 3px rgba(0, 0, 0, 0.40);
+  border-radius: 5%;
+}
+
+.button1:hover, .button2:hover {
     font-size: 1.4em;
     padding-bottom: 4px;
     cursor: pointer;
