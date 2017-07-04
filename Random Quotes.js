@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded',function() {
 
   function quoteDisplay() {
     httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET",'http://quotes.stormconsultancy.co.uk/popular.json',true);
+    httpRequest.open("GET",'https://soupedenuit.github.io/json-quotes/Random-Quotes.json',true);
     httpRequest.send();
     httpRequest.onreadystatechange = function() {
       json = JSON.parse(httpRequest.responseText);
