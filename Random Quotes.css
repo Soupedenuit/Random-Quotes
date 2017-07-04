@@ -13,7 +13,7 @@ body {
 
 #quote_bubble {
   position: absolute;
-  top: 50%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
   /*
@@ -30,7 +30,7 @@ body {
 #quotes {
   position: absolute;
   width: 100%;
-  top: 42%;
+  top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3vw;
@@ -67,7 +67,7 @@ form {
   justify-content: center;
   align-items: center;
   bottom: 5%;
-  left: 15%;
+  left: 5%;
   width: 180px;
   height: 200px;
 }
@@ -120,9 +120,9 @@ input {
 }
 
 .button1:hover, .button2:hover {
-    font-size: 1.4em;
-    padding-bottom: 4px;
-    cursor: pointer;
+  font-size: 1.3em;
+  padding-bottom: 4px;
+  cursor: pointer;
 }
 
 input:active {
@@ -146,7 +146,7 @@ input[type="img"][title] {
 @media (max-height: 700px) {
   #quotes {
     font-size: 2.5vw;
-    top: 44%;
+    top: 40%;
   }
 
   form {
@@ -160,6 +160,12 @@ input[type="img"][title] {
     height: 33px;
     font-size: 0.8em;
     letter-spacing: 1.1px;
+  }
+
+  .button1:hover, .button2:hover {
+    font-size: 0.9em;
+    padding: 0 0 2px -1px;
+    cursor: pointer;
   }
 
   .button3 {
@@ -171,7 +177,7 @@ input[type="img"][title] {
 @media (max-width: 700px) {
   #quotes {
     font-size: 2.5vw;
-    top: 44%;
+    top: 40%;
   }
 
   form {
@@ -185,6 +191,12 @@ input[type="img"][title] {
     height: 33px;
     font-size: 0.8em;
     letter-spacing: 1.1px;
+  }
+
+  .button1:hover, .button2:hover {
+    font-size: 0.9em;
+    padding: 0 0 2px -1px;
+    cursor: pointer;
   }
 
   .button3 {
@@ -196,7 +208,7 @@ input[type="img"][title] {
 @media (orientation: landscape) and (max-width: 700px) {
   #quotes {
     font-size: 2.5vh;
-    top: 44%;
+    top: 40%;
   }
 
   form {
@@ -210,6 +222,12 @@ input[type="img"][title] {
     height: 33px;
     font-size: 0.8em;
     letter-spacing: 1.1px;
+  }
+
+  .button1:hover, .button2:hover {
+    font-size: 0.9em;
+    padding: 0 0 2px -1px;
+    cursor: pointer;
   }
 
   .button3 {
@@ -221,7 +239,7 @@ input[type="img"][title] {
 @media (orientation: landscape) and (max-height: 700px) {
   #quotes {
     font-size: 2.5vh;
-    top: 44%;
+    top: 40%;
   }
 
   form {
@@ -235,6 +253,12 @@ input[type="img"][title] {
     height: 33px;
     font-size: 0.8em;
     letter-spacing: 1.1px;
+  }
+
+  .button1:hover, .button2:hover {
+    font-size: 0.9em;
+    padding: 0 0 2px -1px;
+    cursor: pointer;
   }
 
   .button3 {
