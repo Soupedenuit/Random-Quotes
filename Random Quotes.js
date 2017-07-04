@@ -1,6 +1,3 @@
-/* JSON APIs & AJAX */
-
-/* ISOLATE QUOTE VALUE ONLY CODE --------------- */
 document.addEventListener('DOMContentLoaded',function() {
 
   /*document.getElementById('getQuotes').onclick = quoteDisplay(); */
@@ -38,12 +35,12 @@ document.addEventListener('DOMContentLoaded',function() {
     newDisplay();
     });
 
-    document.getElementById("tweetQuote").addEventListener("click", function(event) {
-      var sendTweet = '"' + tweetQuote + '"\n - ' +  tweetAuthor;
-      if ( sendTweet.length <= 130 ) {  window.open("https://twitter.com/intent/tweet?hashtags=quotes&text=" + encodeURIComponent(sendTweet));
-      }
-      else alert("This quote is too long to tweet! Tweets must be 140 characters maximum, including hashtags (i.e. #quotes).");
-});
+  document.getElementById("tweetQuote").addEventListener("click", function(event) {
+    var sendTweet = '"' + tweetQuote + '"\n - ' +  tweetAuthor;
+    if ( sendTweet.length <= 130 ) {  window.open("https://twitter.com/intent/tweet?hashtags=quotes&text=" + encodeURIComponent(sendTweet));
+    }
+    else alert("This quote is too long to tweet! Tweets must be 140 characters maximum, including hashtags (i.e. #quotes).");
+  });
 
 
 /*
@@ -72,7 +69,7 @@ document.addEventListener('DOMContentLoaded',function() {
       json = JSON.parse(httpRequest.responseText);
       var htmlQuote = "";
       var htmlAuthor = "";
-      var randomizer = Math.random() * 44;
+      var randomizer = Math.random() * 43 + 1;
       var randomId = Math.ceil(randomizer);
       json = json.filter(function(val) {
         return (val.id === randomId);
@@ -111,11 +108,11 @@ document.addEventListener('DOMContentLoaded',function() {
       tweetAuthor = author;
       /* Modify text size based on length of quote */
       function smallFont() {
-        document.getElementById("quotes").style.cssText = "font-size: 1.7em;";
+        document.getElementById("quotes").style.cssText = "font-size: 2.5vh;";
       }
 
       function bigFont() {
-        document.getElementById("quotes").style.cssText = "font-size: 2.1em;";
+        document.getElementById("quotes").style.cssText = "font-size: 3vh;";
       }
 
       /* font conditions with timeouts
@@ -125,12 +122,12 @@ document.addEventListener('DOMContentLoaded',function() {
 
       else window.setTimeout(function() {bigFont()}, 1600); */
 
-      if ( quoteLen > 5) {
+      /*if ( quoteLen > 5) {
         smallFont();
       }
 
       else bigFont();
-
+      */
       /* Fade in & fade out quote */
 
       /*$( document ).ready(function() {     $("#quotes").css({
@@ -153,41 +150,3 @@ document.addEventListener('DOMContentLoaded',function() {
   }; //closes quoteDisplay() function
 // }); // closes jQuery effects function
 }); //closes addEventListener function
-
-
-/* FULL OBJECT KEY CODE ---------------
-
-document.addEventListener('DOMContentLoaded',function() {
-   window.onload = function() {
-    httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET",'http://quotes.stormconsultancy.co.uk/popular.json',true);
-    httpRequest.send();
-    httpRequest.onreadystatechange = function() {
-      json = JSON.parse(httpRequest.responseText);
-      var html = "";
-      var randomizer = Math.random() * 43;
-      var randomId = Math.ceil(randomizer);
-      json = json.filter(function(val) {
-        return (val.id === randomId);
-      }); //closes json.filter function
-      json.forEach(function(val) {
-        var keys = Object.keys(val);
-        html += "<div class='api_quotes'>";
-        keys.forEach(function(key) {
-          html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
-        }); //closes keys.forEach function
-        html += "</div><br>";
-      }); //closes json.forEach function
-
-    document.getElementById('quotes').innerHTML =  html;
-  }; //closes onreadystatechange function
-}; //closes window.onload function
-}); //closes addEventListener function
-
-*/
-
-/* sites:
-https://talaikis.com/api/quotes/
-http://quotes.stormconsultancy.co.uk/popular.json
-
-*/
