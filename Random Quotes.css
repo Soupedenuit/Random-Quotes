@@ -72,6 +72,12 @@ form {
   height: 200px;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .button1 {
   position: relative;
   margin-bottom: 10px;
