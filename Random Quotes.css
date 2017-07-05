@@ -146,6 +146,7 @@ input[type="img"][title] {
 @media (max-height: 700px) {
   #quotes {
     font-size: 2.5vw;
+    font-family: 'Roboto', Palatino, Verdana, 'sans serif';
     top: 40%;
   }
 
@@ -159,12 +160,13 @@ input[type="img"][title] {
     width: 120px;
     height: 33px;
     font-size: 0.8em;
+    font-family: 'Roboto', Palatino, Verdana, 'sans serif';
     letter-spacing: 1.1px;
   }
 
   .button1:hover, .button2:hover {
     font-size: 0.9em;
-    padding: 0 0 2px -1px;
+    padding: 0 0 2px -2px;
     cursor: pointer;
   }
 
@@ -177,6 +179,7 @@ input[type="img"][title] {
 @media (max-width: 700px) {
   #quotes {
     font-size: 2.5vw;
+    font-family: 'Roboto', Palatino, Verdana, 'sans serif';
     top: 40%;
   }
 
@@ -190,12 +193,13 @@ input[type="img"][title] {
     width: 120px;
     height: 33px;
     font-size: 0.8em;
+    font-family: 'Roboto', Palatino, Verdana, 'sans serif';
     letter-spacing: 1.1px;
   }
 
   .button1:hover, .button2:hover {
     font-size: 0.9em;
-    padding: 0 0 2px -1px;
+    padding: 0 0 2px -2px;
     cursor: pointer;
   }
 
@@ -208,6 +212,7 @@ input[type="img"][title] {
 @media (orientation: landscape) and (max-width: 700px) {
   #quotes {
     font-size: 2.5vh;
+    font-family: 'Roboto', Palatino, Verdana, 'sans serif';
     top: 40%;
   }
 
@@ -221,12 +226,13 @@ input[type="img"][title] {
     width: 120px;
     height: 33px;
     font-size: 0.8em;
+    font-family: 'Roboto', Palatino, Verdana, 'sans serif';
     letter-spacing: 1.1px;
   }
 
   .button1:hover, .button2:hover {
     font-size: 0.9em;
-    padding: 0 0 2px -1px;
+    padding: 0 0 2px -2px;
     cursor: pointer;
   }
 
@@ -239,6 +245,7 @@ input[type="img"][title] {
 @media (orientation: landscape) and (max-height: 700px) {
   #quotes {
     font-size: 2.5vh;
+    font-family: 'Roboto', Palatino, Verdana, 'sans serif';
     top: 40%;
   }
 
@@ -252,12 +259,13 @@ input[type="img"][title] {
     width: 120px;
     height: 33px;
     font-size: 0.8em;
+    font-family: 'Roboto', Palatino, Verdana, 'sans serif';
     letter-spacing: 1.1px;
   }
 
   .button1:hover, .button2:hover {
     font-size: 0.9em;
-    padding: 0 0 2px -1px;
+    padding: 0 0 2px -2px;
     cursor: pointer;
   }
 
